@@ -1,0 +1,20 @@
+--- vendor/github.com/grpc-ecosystem/grpc-gateway/runtime/BUILD.bazel	2019-04-08 19:18:10.126640957 +0100
++++ vendor/github.com/grpc-ecosystem/grpc-gateway/runtime/BUILD.bazel	2019-04-08 19:20:50.396637665 +0100
+@@ -25,6 +25,7 @@
+     importmap = "github.com/prometheus/prometheus/vendor/github.com/grpc-ecosystem/grpc-gateway/runtime",
+     importpath = "github.com/grpc-ecosystem/grpc-gateway/runtime",
+     deps = [
++        "//vendor/github.com/grpc-ecosystem/grpc-gateway/runtime/internal:go_default_library",
+         "//vendor/github.com/grpc-ecosystem/grpc-gateway/utilities:go_default_library",
+         "//vendor/google.golang.org/grpc/codes:go_default_library",
+         "//vendor/google.golang.org/grpc/grpclog:go_default_library",
+--- vendor/github.com/grpc-ecosystem/grpc-gateway/runtime/internal/BUILD.bazel	2019-04-08 19:18:10.126640957 +0100
++++ vendor/github.com/grpc-ecosystem/grpc-gateway/runtime/internal/BUILD.bazel	2019-04-08 19:19:23.446639451 +0100
+@@ -20,6 +20,7 @@
+     srcs = ["stream_chunk.pb.go"],
+     importmap = "github.com/prometheus/prometheus/vendor/github.com/grpc-ecosystem/grpc-gateway/runtime/internal",
+     importpath = "github.com/grpc-ecosystem/grpc-gateway/runtime/internal",
++    visibility = ["//visibility:public"],
+     deps = [
+         "@com_github_golang_protobuf//proto:go_default_library",
+         "@io_bazel_rules_go//proto/wkt:any_go_proto",
